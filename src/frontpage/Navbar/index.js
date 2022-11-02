@@ -12,8 +12,9 @@ import {
   NavLogo,
   NavMenu,
   NavBtn,
-  NavBtnLink
-} from './NavbarElements';
+  NavBtnLink,
+} from "./NavbarElements";
+import { SidebarLink } from "frontpage/Sidebar/SidebarElements";
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = ({ toggle }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', changeNav);
+    window.addEventListener("scroll", changeNav);
   }, []);
 
   const toggleHome = () => {
@@ -36,10 +37,10 @@ const Navbar = ({ toggle }) => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
+      <IconContext.Provider value={{ color: "#fff" }}>
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
-            <NavLogo onClick={toggleHome} to='/'>
+            <NavLogo onClick={toggleHome} to="/">
               SKJLme
             </NavLogo>
             <MobileIcon onClick={toggle}>
@@ -47,92 +48,113 @@ const Navbar = ({ toggle }) => {
             </MobileIcon>
             <NavMenu>
               <NavItem>
-                <NavLinks
-                  to='https://github.com/Defi-Time/skjl.me/blob/main/README.md'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  About
+                <NavLinks>
+                  <SidebarLink
+                    to="about"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    style={{ fontSize: 20 }}
+                  >
+                    About
+                  </SidebarLink>
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks
-                  to='/admin/dashboard'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Anonymous
+                <NavLinks>
+                  <SidebarLink
+                    to="anonymous"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    style={{ fontSize: 20 }}
+                  >
+                    Anonymous
+                  </SidebarLink>
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks
-                  to='/admin/dashboard'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Free
+                <NavLinks>
+                  <SidebarLink
+                    to="freeCalendar"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    style={{ fontSize: 20 }}
+                  >
+                    Free
+                  </SidebarLink>
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks
-                  to='/admin/dashboard'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Integrateable
+                <NavLinks>
+                  <SidebarLink
+                    to="integrateable"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    style={{ fontSize: 20 }}
+                  >
+                    Integrateable
+                  </SidebarLink>
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks
-                  to='https://github.com/Defi-Time/skjl.me/blob/main/README.md'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Opensource
+                <NavLinks>
+                  <SidebarLink
+                    to="opensource"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    style={{ fontSize: 20 }}
+                  >
+                    Opensource
+                  </SidebarLink>
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks
-                  to='/admin/dashboard'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Services
+                <NavLinks>
+                  <SidebarLink
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    style={{ fontSize: 20 }}
+                  >
+                    Services
+                  </SidebarLink>
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks
-                  to='/admin/dashboard'
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Sign Up
+                <NavLinks>
+                  <SidebarLink
+                    to="signup"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    style={{ fontSize: 20 }}
+                  >
+                    Sign Up
+                  </SidebarLink>
                 </NavLinks>
               </NavItem>
             </NavMenu>
             <NavBtn>
-              <NavBtnLink to='/admin/dashboard'>Sign In</NavBtnLink>
+              <NavBtnLink to="/admin/dashboard">Sign In</NavBtnLink>
             </NavBtn>
           </NavbarContainer>
         </Nav>
@@ -143,7 +165,6 @@ const Navbar = ({ toggle }) => {
 
 Navbar.propTypes = {
   toggle: PropTypes.bool,
-}
-
+};
 
 export default Navbar;
